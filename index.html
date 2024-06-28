@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="3;url=https://trollface.dk">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #696969; /* Grayer background color */
+        }
+        .content {
+            text-align: center;
+            color: #fff;
+        }
+        .timer {
+            font-size: 48px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="message">Redirecting in <span class="timer" id="countdown">3</span> seconds...</div>
+    </div>
+    <script>
+        let countdownElement = document.getElementById('countdown');
+        let countdownValue = 3;
+
+        function updateCountdown() {
+            countdownValue--;
+            countdownElement.textContent = countdownValue;
+            if (countdownValue > 0) {
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+
+        setTimeout(updateCountdown, 1000);
+    </script>
+</body>
+</html>
